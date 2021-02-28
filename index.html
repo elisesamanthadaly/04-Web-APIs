@@ -15,6 +15,11 @@
     <!-- Displays time left for game -->
     <div>Time: <span id="timer">0</span></div>
 
+    <h1 id="quizHeader">Quiz</h1>
+    <section id="instructions">
+        Try to answer the following five questions within the time limit. Keep in mind that incorrect answers will penalize your time by 15 seconds!
+    </section>
+
     <!-- Click to start game -->
     <div id="startButton">Start</div>
 
@@ -27,11 +32,13 @@
     <div id="d" class="q4Right"></div>
 
     <!-- Highscores scored in local storage. List populated by script when appropriate function called -->
+    <h2 id="highscoresHeader">Highscores</h2>
     <ul id="highscoreList"></ul>
 
-    <!-- Quiz takers can input initials at end of game -->
+    <!-- Score displays at end of game. Quiz takers can input initials to store their score -->
     <form id="initialsForm">
-        <input type="text" id="initialsInput">
+        <p id="scoreDisplay"></p>
+        <input type="text" placeholder="Enter initials" id="initialsInput">
         <input type="submit">
     </form>
 

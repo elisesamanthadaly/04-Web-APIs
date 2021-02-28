@@ -1,4 +1,9 @@
 /* Initially hidden */
+#highscoresHeader {
+    display: none;
+}
+
+/* Initially hidden */
 #highscoreList {
     display: none;
 }
