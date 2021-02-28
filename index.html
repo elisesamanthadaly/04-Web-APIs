@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>04 Web APIs: Code Quiz</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <!-- Click to show highscores -->
+    <div id="highscoreButton">Show Highscores</div>
+
+    <!-- Displays time left for game -->
+    <div>Time: <span id="timer">0</span></div>
+
+    <!-- Click to start game -->
+    <div id="startButton">Start</div>
+
+    <!-- Question/answer text populated by script -->
+    <div id="question"></div>
+    <!-- If rewriting questions, correct answer choice/question can be changed by shuffling classes below between a - d -->
+    <div id="a" class="q1Right q5Right"></div>
+    <div id="b" class="q2Right"></div>
+    <div id="c" class="q3Right"></div>
+    <div id="d" class="q4Right"></div>
+
+    <!-- Highscores scored in local storage. List populated by script when appropriate function called -->
+    <ul id="highscoreList"></ul>
+
+    <!-- Quiz takers can input initials at end of game -->
+    <form id="initialsForm">
+        <input type="text" id="initialsInput">
+        <input type="submit">
+    </form>
+
+    <!-- Click to retake quiz -->
+    <div id="backButton">Go Back</div>
+    
+    <!-- Click to clear local storage -->
+    <div id="clearButton">Clear Highscores</div>
+
+    <!-- Displays whether the user selected the correct answer -->
+    <div id="rightOrWrong"></div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+/* Initially hidden */
+#highscoreList {
+    display: none;
+}
+
+/* Initially hidden */
+#initialsForm {
+    display: none;
+}
+
+/* Initially hidden */
+#backButton {
+    display: none;
+}
+
+/* Initially hidden */
+#clearButton {
+    display: none;
+}
