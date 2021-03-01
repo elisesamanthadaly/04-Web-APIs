@@ -6,59 +6,57 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>04 Web APIs: Code Quiz</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- Below links for Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <main>
-        <!-- Click to show highscores -->
-        <div id="highscoreButton">View Highscores</div>
+    <!-- Click to view highscores -->
+    <div id="highscoresButton">View Highscores</div>
 
-        <!-- Displays time left for game -->
-        <div id="timerLabel">Time: <span id="timer">0</span></div>
+    <!-- Displays time left for game -->
+    <div id="timerLabel">Time: <span id="timer">0</span></div>
 
-        <div id="whiteSpace"></div>
+    <h1 id="quizHeader">Quiz</h1>
 
-        <h1 id="quizHeader">Quiz</h1>
+    <section id="instructions">
+        Try to answer the following five questions within the time limit.
+        <br>
+        Keep in mind that incorrect answers will penalize your time by 15 seconds!
+    </section>
 
-        <section id="instructions">
-            Try to answer the following five questions within the time limit.
-            <br>
-            Keep in mind that incorrect answers will penalize your time by 15 seconds!
-        </section>
+    <!-- Click to start game -->
+    <div id="startButton" class="buttonApp">Start Quiz</div>
 
-        <!-- Click to start game -->
-        <div id="startButton" class="buttonApp">Start Quiz</div>
+    <!-- Question/answer text populated by script -->
+    <h2 id="question"></h2>
+    <!-- If rewriting questions, correct answer choice/question can be changed by shuffling classes below between a - d -->
+    <div id="a" class="answer buttonApp q1Right q5Right"></div>
+    <div id="b" class="answer buttonApp q2Right"></div>
+    <div id="c" class="answer buttonApp q3Right"></div>
+    <div id="d" class="answer buttonApp q4Right"></div>
 
-        <!-- Question/answer text populated by script -->
-        <h2 id="question"></h2>
-        <!-- If rewriting questions, correct answer choice/question can be changed by shuffling classes below between a - d -->
-        <div id="a" class="answer buttonApp q1Right q5Right"></div>
-        <div id="b" class="answer buttonApp q2Right"></div>
-        <div id="c" class="answer buttonApp q3Right"></div>
-        <div id="d" class="answer buttonApp q4Right"></div>
+    <!-- Highscores scored in local storage. List populated by script when appropriate function called -->
+    <h2 id="highscoresHeader">Highscores</h2>
+    <ul id="highscoreList"></ul>
 
-        <!-- Highscores scored in local storage. List populated by script when appropriate function called -->
-        <h2 id="highscoresHeader">Highscores</h2>
-        <ul id="highscoreList"></ul>
+    <!-- Score displays at end of game. Quiz takers can input initials to store their score -->
+    <form id="initialsForm">
+        <section id="scoreDisplay"></section>
+        <input type="text" placeholder="Enter initials" id="initialsInput">
+        <input type="submit" class="buttonApp">
+    </form>
 
-        <!-- Score displays at end of game. Quiz takers can input initials to store their score -->
-        <form id="initialsForm">
-            <p id="scoreDisplay"></p>
-            <input type="text" placeholder="Enter initials" id="initialsInput">
-            <input type="submit" class="buttonApp">
-        </form>
-
-        <!-- Click to retake quiz -->
-        <div id="backButton" class="buttonApp">Go Back</div>
+    <!-- Click to retake quiz -->
+    <div id="backButton" class="buttonApp">Go Back</div>
     
-        <!-- Click to clear local storage -->
-        <div id="clearButton" class="buttonApp">Clear Highscores</div>
+    <!-- Click to clear local storage -->
+    <div id="clearButton" class="buttonApp">Clear Highscores</div>
 
-        <!-- Displays whether the user selected the correct answer -->
-        <div id="rightOrWrong"></div>
-    </main>
+    <!-- Displays whether the user selected the correct answer -->
+    <div id="rightOrWrong"></div>
+
     <script src="assets/js/script.js"></script>
 </body>
 </html>

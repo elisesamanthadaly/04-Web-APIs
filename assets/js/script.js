@@ -1,5 +1,5 @@
 //VARIABLES
-var highscoreButton = document.querySelector("#highscoreButton");
+var highscoresButton = document.querySelector("#highscoresButton");
 var timer = document.querySelector("#timer");
 var timeLeft;
 var timeInterval;
@@ -209,10 +209,10 @@ function alertRightOrWrong() {
   }, 100);
 }
 
-//Trigged by clicking Highscore button, answering the last question, or running out of time
+//Triggered by clicking Highscore button, answering the last question, or running out of time
 function showHighscores() {
   //Hide Highscore/Start buttons/intro text and questions/answer choices
-  highscoreButton.style.display = "none";
+  highscoresButton.style.display = "none";
   quizHeader.style.display = "none";
   instructions.style.display = "none";
   startButton.style.display = "none";
@@ -233,10 +233,10 @@ function showHighscores() {
   clearInterval(timeInterval);
 
   //Parse local storage
+  var storedHighscores;
   storedHighscores = JSON.parse(localStorage.getItem("highscores"));
 
   //Prevents attempting to use an empty array
-  var storedHighscores;
   if (storedHighscores !== null) {
     highscores = storedHighscores;
   }
@@ -265,7 +265,7 @@ function updateHighscoreList() {
 
 //EVENT LISTENERS
 //Click the Highscore button to show highscores
-highscoreButton.addEventListener("click", function() {
+highscoresButton.addEventListener("click", function() {
   showHighscores();
   //Removes initials form since user should only input at end of game
   initialsForm.style.display = "none";
@@ -304,13 +304,13 @@ initialsForm.addEventListener("submit", function(event) {
 //Click to start the game over
 backButton.addEventListener("click", function() {
   //Show Highscore/Start buttons/intro text, reset timer
-  highscoreButton.style.display = "block";
+  highscoresButton.style.display = "block";
   timeLeft = 0;
   timer.innerHTML = timeLeft;
   quizHeader.style.display = "block";
   instructions.style.display = "block";
   startButton.style.display = "block";
-  //Hide highscore header, list/initials form/Clear and Back buttons, empty out right/wrong indicator
+  //Hide highscore header/list, initials form, Back/Clear buttons, empty out right/wrong indicator
   highscoresHeader.style.display = "none";
   highscoreList.style.display = "none";
   initialsForm.style.display = "none";

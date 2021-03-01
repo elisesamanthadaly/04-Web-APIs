@@ -1,20 +1,44 @@
 :root {
-    --mainColor: #7623ad;
-    --altColor: #f3deff;
+    font-family: 'Roboto', sans-serif;
+    --buttonColor: #7623ad;
     --lightText: white;
     --buttonBorder: #8ccbe6;
+    --highscoreStriping: #f3deff;
     --rightOrWrongText: lightgrey;
-    font-family: 'Roboto', sans-serif;
+}
+
+#highscoresButton {
+    float: left;
+    color: var(--buttonColor);
+}
+
+#timerLabel {
+    float: right;
+}
+
+#quizHeader {
+    clear: both;
+    padding-top: 150px;
+    text-align: center;
+}
+
+#instructions {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#startButton {
+    margin: auto;
 }
 
 .buttonApp {
-    background: var(--mainColor);
-    color: var(--lightText);
+    background: var(--buttonColor);
+    width: fit-content;
+    padding: 3px;
     border-radius: 5px;
     border-style: none;
+    color: var(--lightText);
     cursor: pointer;
-    padding: 3px;
-    width: fit-content;
 }
 
 .buttonApp:hover {
@@ -26,106 +50,77 @@
     border-color: var(--buttonBorder);
 }
 
+#question {
+    display: none; /* Initially hidden */
+    clear: both;
+    padding-top: 150px;
+    margin: 0% 25% 15px;
+}
+
+.answer {
+    display: none; /* Initially hidden */
+    margin: 0% 25% 5px;
+}
+
+#highscoresHeader {
+    display: none; /* Initially hidden */
+    clear: both;
+    padding-top: 150px;
+    margin: 0% 25% 15px;
+}
+
+#highscoreList {
+    display: none; /* Initially hidden */
+    margin: 0% 25% 5px;
+    padding: 0;
+    list-style-type: none;
+}
+
+/* Colors every other highscore for increased visibility */
+#highscoreList :nth-child(odd) {
+    background: var(--highscoreStriping);
+}
+
+/* Adds pointer symbol before highscores */
+#highscoreList li:before {
+    content: "\00a0\25BA\2002";
+    font-size: 5px;
+    position: relative;
+    bottom: 5px;
+}
+
+#initialsForm {
+    display: none; /* Initially hidden */
+    margin: 0% 25% 5px;
+}
+
+#scoreDisplay {
+    margin-bottom: 15px;
+}
+
+/* Input doesn't inherit font from body */
 input {
     font-family: 'Roboto', sans-serif;
 }
 
-input:active {
+/* Not currently working; need to research this more */
+/* input:active {
     border-style: solid;
     border-color: var(--buttonBorder);
-}
+} */
 
-#highscoreButton {
-    float: left;
-    color: var(--mainColor);
-}
-
-#timerLabel {
-    float: right;
-}
-
-#whiteSpace {
-    clear:both;
-    height: 150px;
-}
-
-#quizHeader {
-    text-align: center;
-}
-
-#instructions {
-    text-align: center;
-    padding-bottom: 15px;
-}
-
-#startButton {
-    text-align: center;
-    margin: auto;
-}
-
-/* Initially hidden */
-#question {
-    display: none;
-    clear: both;
-    margin: 0% 25% 15px;
-}
-
-/* Initially hidden */
-.answer {
-    display: none;
-    margin: 5px 25%;
-}
-
-/* Initially hidden */
-#highscoresHeader {
-    display: none;
-    clear: both;
-    margin: 0% 25%;
-    text-align: center;
-}
-
-/* Initially hidden */
-#highscoreList {
-    display: none;
-    margin: 0% 25%;
-    list-style-type: none;
-    padding: 0;
-}
-
-#highscoreList :nth-child(odd) {
-    background: var(--altColor);
-}
-
-li:before {
-    content: "\25CF\00a0";
-    font-size: 10px;
-    position: relative;
-    bottom: 3px;
-}
-
-/* Initially hidden */
-#initialsForm {
-    display: none;
-    margin: 0% 25% 10px;
-}
-
-/* Initially hidden */
 #backButton {
-    display: none;
-    margin: 5px 25%;
-    margin-right: 2.5px;
+    display: none; /* Initially hidden */
+    margin: 5px 2.5px 5px 25%;
 }
 
-/* Initially hidden */
 #clearButton {
-    display: none;
+    display: none; /* Initially hidden */
     margin: 5px 2.5px;
 }
 
-/* Initially hidden */
 #rightOrWrong {
-    display: none;
-    /* clear: both; */
+    display: none; /* Initially hidden */
     margin: 0% 25%;
     color: var(--rightOrWrongText);
     font-style: italic;
