@@ -117,12 +117,14 @@ function selectAnswer(event) {
   if (questionNumber === 1) {
     //If selected choice is correct, tell user and increase their score
     if (event.target.classList.contains("q1Right")) {
-      rightOrWrong.innerHTML = "Right!";
+      rightOrWrong.innerHTML = "<hr>Right!";
+      alertRightOrWrong();
       score++;
     }
     //If selected choice is incorrect, tell user and subtract time from timer
     else {
-      rightOrWrong.innerHTML = "Wrong!";
+      rightOrWrong.innerHTML = "<hr>Wrong!";
+      alertRightOrWrong();
       timeLeft-=15;
     }
     //Proceed to the next question
@@ -131,11 +133,13 @@ function selectAnswer(event) {
   //Question 2
   else if (questionNumber === 2) {
     if (event.target.classList.contains("q2Right")) {
-      rightOrWrong.innerHTML = "Right!";
+      rightOrWrong.innerHTML = "<hr>Right!";
+      alertRightOrWrong();
       score++;
     }
     else {
-      rightOrWrong.innerHTML = "Wrong!";
+      rightOrWrong.innerHTML = "<hr>Wrong!";
+      alertRightOrWrong();
       timeLeft-=15;
     }
     nextQuestion();
@@ -143,11 +147,13 @@ function selectAnswer(event) {
   //Question 3
   else if (questionNumber === 3) {
     if (event.target.classList.contains("q3Right")) {
-      rightOrWrong.innerHTML = "Right!";
+      rightOrWrong.innerHTML = "<hr>Right!";
+      alertRightOrWrong();
       score++;
     }
     else {
-      rightOrWrong.innerHTML = "Wrong!";
+      rightOrWrong.innerHTML = "<hr>Wrong!";
+      alertRightOrWrong();
       timeLeft-=15;
     }
     nextQuestion();
@@ -155,11 +161,13 @@ function selectAnswer(event) {
   //Question 4
   else if (questionNumber === 4) {
     if (event.target.classList.contains("q4Right")) {
-      rightOrWrong.innerHTML = "Right!";
+      rightOrWrong.innerHTML = "<hr>Right!";
+      alertRightOrWrong();
       score++;
     }
     else {
-      rightOrWrong.innerHTML = "Wrong!";
+      rightOrWrong.innerHTML = "<hr>Wrong!";
+      alertRightOrWrong();
       timeLeft-=15;
     }
     nextQuestion();
@@ -167,16 +175,38 @@ function selectAnswer(event) {
   //Question 5
   else if (questionNumber === 5) {
     if (event.target.classList.contains("q5Right")) {
-      rightOrWrong.innerHTML = "Right!";
+      rightOrWrong.innerHTML = "<hr>Right!";
+      alertRightOrWrong();
       score++;
     }
     else {
-      rightOrWrong.innerHTML = "Wrong!";
+      rightOrWrong.innerHTML = "<hr>Wrong!";
+      alertRightOrWrong();
       timeLeft-=15;
     }
     //This is the last question; display highscore list/initials form. More questions can be inserted into this function if desired
     showHighscores();
   }
+}
+
+//Displays right/wrong alert briefly, then removes it
+function alertRightOrWrong() {
+  //Clears interval first in case user is clicking answers quickly (i.e. a prior alert is still visible)
+  var alertInterval;
+  clearInterval(alertInterval);
+
+  var alertTime = 7.5;
+
+  alertInterval = setInterval(function() {
+    if (alertTime > 0) {
+      rightOrWrong.style.display = "block";
+      alertTime--;
+    }
+    else {
+      rightOrWrong.style.display = "none";
+      clearInterval(alertInterval);
+    }
+  }, 100);
 }
 
 //Trigged by clicking Highscore button, answering the last question, or running out of time
@@ -196,8 +226,8 @@ function showHighscores() {
   highscoreList.style.display = "block";
   initialsForm.style.display = "block";
   scoreDisplay.innerHTML = "All done! Your score is " + score + "/5."
-  backButton.style.display = "block";
-  clearButton.style.display = "block";
+  backButton.style.display = "inline-block";
+  clearButton.style.display = "inline-block";
 
   //Stop the timer
   clearInterval(timeInterval);
