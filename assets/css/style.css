@@ -104,10 +104,10 @@ input {
 }
 
 /* Not currently working; need to research this more */
-/* input:active {
+input:active {
     border-style: solid;
     border-color: var(--buttonBorder);
-} */
+}
 
 #backButton {
     display: none; /* Initially hidden */
