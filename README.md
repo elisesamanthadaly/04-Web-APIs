@@ -18,7 +18,7 @@ An alert flashes in the center of the screen after each question, displaying whe
 
 Selecting incorrect answers incurs a time penalty of 15 seconds.
 
-When the user finishes the quiz (or if the timer runs out before the quiz is finished), previous highscores are displayed. The user also can input their initials to store their current score, or clear previous highscores.
+When the user finishes the quiz (or if the timer runs out before the quiz is finished), previous highscores are displayed. The user can also input their initials to store their current score, or clear previous highscores.
 
 Click the "Go Back" button to start the quiz over.
 
@@ -29,9 +29,9 @@ At any time during the quiz, the "View Highscores" button in the upper lefthand 
 
 ## Credits
 
-Where would any of us be without [w3schools...](https://www.w3schools.com/).
+Where would any of us be without [w3schools...](https://www.w3schools.com/)
 
-Also, [Google Fonts](https://fonts.google.com/) must be credited for the ever-popular Roboto font.
+Also, [Google Fonts](https://fonts.google.com/specimen/Roboto?preview.text_type=custom) must be credited for the ever-popular Roboto font.
 
 Finally, [Wikipedia, the free encyclopedia](https://en.wikipedia.org/wiki/Cavendish_banana) is always a great resource for filler text.
 
