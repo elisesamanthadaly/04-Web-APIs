@@ -1,5 +1,5 @@
-# 2-22-21-Homework
-# 04 Web APIs: Code Quiz
+# 04 Web APIs
+# Code Quiz
 
 This application is a multiple choice quiz! The quiz is timed, and the user loses time if they choose incorrect answers. At the end of the quiz, users can store their initials and score into local storage for future viewing.
 
